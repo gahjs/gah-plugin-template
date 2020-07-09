@@ -24,7 +24,6 @@ export class TemplatePlugin extends GahPlugin {
       msg: 'Please enter a string configuration property',
       default: 'default value',
       enabled: () => !(existingCfg?.someSetting),
-      cancelled: false,
       validator: (val: string) => val.endsWith('.json')
     }) ?? existingCfg.someSetting; // Defaults back to the old value in case undefined gets returned
 
@@ -33,7 +32,6 @@ export class TemplatePlugin extends GahPlugin {
       msg: 'Please enter a (fuzzy)path configuration property',
       default: 'test/directory',
       enabled: () => !(existingCfg?.somePathSetting),
-      cancelled: false,
       itemType: 'file'
     }) ?? existingCfg.somePathSetting; // Defaults back to the old value in case undefined gets returned
 
@@ -42,7 +40,6 @@ export class TemplatePlugin extends GahPlugin {
       msg: 'Please enter a (fuzzy)path configuration property',
       default: 'test/directory',
       enabled: () => !(existingCfg?.someArraySetting),
-      cancelled: false,
       choices: () => ['Option1', 'Option2', 'Option3', 'Option4', 'Option5']
     }) ?? existingCfg.someArraySetting; // Defaults back to the old value in case undefined gets returned
 
@@ -55,7 +52,7 @@ export class TemplatePlugin extends GahPlugin {
    */
   public onInit() {
     // Register a handler that gets called synchronously if the corresponding event occured. Some events can be called multiple times!
-    this.registerEventListener(GahEvent.INSTALL_STARTED, (event: InstallStartedEvent) => {
+    this.registerEventListener('INSTALL_STARTED', (event) => {
       // Some example logic that does not really do anything:
       if (!event.gahFile?.isHost) {
         return;
@@ -63,7 +60,7 @@ export class TemplatePlugin extends GahPlugin {
       console.log(this.cfg.someSetting + ' --> ' + event.gahFile?.modules[0].moduleName!);
     });
 
-    this.registerEventListener(GahEvent.FINISHED_MODULE_INSTALL, (event: FinishedgModuleInstallEvent) => {
+    this.registerEventListener('FINISHED_MODULE_INSTALL', (event) => {
       // Some example logic that does not really do anything:
       if (!event.module?.isEntry) {
         return;

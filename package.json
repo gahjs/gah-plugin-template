@@ -13,7 +13,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@awdware/gah-shared": "^0.0.25"
+    "@awdware/gah-shared": "^0.0.30"
   },
   "devDependencies": {
     "@types/node": "^13.13.2",

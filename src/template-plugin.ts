@@ -1,4 +1,4 @@
-import { GahPlugin, GahEvent, GahPluginConfig, InstallStartedEvent, FinishedgModuleInstallEvent } from '@awdware/gah-shared';
+import { GahPlugin, GahPluginConfig } from '@awdware/gah-shared';
 
 import { TemplateConfig } from './template-config';
 
@@ -15,7 +15,7 @@ export class TemplatePlugin extends GahPlugin {
    * Called after adding the plugin with gah. Used to configure the plugin.
    * @param existingCfg This will be passed by gah and is used to check wheter a property is already configured or not
    */
-  protected async onInstall(existingCfg: TemplateConfig): Promise<GahPluginConfig> {
+  public async onInstall(existingCfg: TemplateConfig): Promise<GahPluginConfig> {
     // Create a new instance of the plugin configuration
     const newCfg = new TemplateConfig();
 

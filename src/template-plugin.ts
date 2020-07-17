@@ -57,7 +57,7 @@ export class TemplatePlugin extends GahPlugin {
       if (!event.gahFile?.isHost) {
         return;
       }
-      console.log(this.cfg.someSetting + ' --> ' + event.gahFile?.modules[0].moduleName!);
+      console.log(`${this.cfg.someSetting  } --> ${  event.gahFile?.modules[0].moduleName!}`);
     });
 
     this.registerEventListener('FINISHED_MODULE_INSTALL', (event) => {
@@ -65,7 +65,7 @@ export class TemplatePlugin extends GahPlugin {
       if (!event.module?.isEntry) {
         return;
       }
-      console.log('entry module: ' + event.module.moduleName!);
+      console.log(`entry module: ${  event.module.moduleName!}`);
     });
   }
 

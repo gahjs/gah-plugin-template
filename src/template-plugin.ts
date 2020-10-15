@@ -57,7 +57,7 @@ export class TemplatePlugin extends GahPlugin {
       if (!event.gahFile?.isHost) {
         return;
       }
-      console.log(`${this.cfg.someSetting  } --> ${  event.gahFile?.modules[0].moduleName!}`);
+      this.loggerService.log(`${this.cfg.someSetting} --> ${event.gahFile?.modules[0].moduleName!}`);
     });
 
     this.registerEventListener('FINISHED_MODULE_INSTALL', (event) => {
@@ -65,7 +65,13 @@ export class TemplatePlugin extends GahPlugin {
       if (!event.module?.isEntry) {
         return;
       }
-      console.log(`entry module: ${  event.module.moduleName!}`);
+      this.loggerService.log(`entry module: ${event.module.moduleName!}`);
+    });
+
+    this.registerCommandHandler('example', (args) => {
+      this.loggerService.error('This command has yet to be implemented ¯\\_(ツ)_/¯');
+      this.loggerService.error(args[0]);
+      return true;
     });
   }
 

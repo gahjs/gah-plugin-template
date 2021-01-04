@@ -1,4 +1,4 @@
-import { GahPlugin, GahPluginConfig } from '@awdware/gah-shared';
+import { GahPlugin, GahPluginConfig } from '@gah/shared';
 
 import { TemplateConfig } from './template-config';
 

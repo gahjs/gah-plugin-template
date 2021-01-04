@@ -14,11 +14,6 @@
   dependencies:
     "@awdware/eslint-config-base" "^0.0.4"
 
-"@awdware/gah-shared@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@awdware/gah-shared/-/gah-shared-0.2.0.tgz#189f2c74c8b5581f44b2602bded0e1a0dbe7c037"
-  integrity sha512-IOJY2YcgD+OjdCx8I16qAljt0cG2Cuh7FJbCm5r32uJgWrS5m7EU3zfZDgt80Hmv6kx4o7FScTjDkQEhOa5Vjg==
-
 "@babel/code-frame@^7.0.0":
   version "7.8.3"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.8.3.tgz#33e25903d7481181534e12ec0a25f16b6fcf419e"
@@ -55,6 +50,11 @@
     lodash "^4.17.19"
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
+
+"@gah/shared@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@gah/shared/-/shared-0.5.1.tgz#8ec14f964399f225976b9880dab30f0074c9e382"
+  integrity sha512-ywV644Kg6cO5Onu0eZ/4VpECcXV61KODpEsPyX/cJiPcJv0t38M5FJvKv4qxjk/0LWeQP7eJzpIOH0s0UTyJNQ==
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"

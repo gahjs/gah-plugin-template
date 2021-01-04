@@ -1,6 +1,6 @@
 {
-  "name": "@awdware/gah-plugin-template",
-  "version": "0.0.17",
+  "name": "@gah/plugin-template",
+  "version": "0.0.1",
   "description": "Template for a new plugin for gah",
   "main": "./lib/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@awdware/gah-shared": "^0.2.0"
+    "@gah/shared": "^0.5.1"
   },
   "devDependencies": {
     "@awdware/eslint-config-nodejs": "^0.0.6",

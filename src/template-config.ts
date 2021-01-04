@@ -1,4 +1,4 @@
-import { GahPluginConfig } from '@awdware/gah-shared';
+import { GahPluginConfig } from '@gah/shared';
 
 export class TemplateConfig extends GahPluginConfig {
   public someSetting: string;

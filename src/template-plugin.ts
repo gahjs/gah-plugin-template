@@ -52,7 +52,7 @@ export class TemplatePlugin extends GahPlugin {
    */
   public onInit() {
     // Register a handler that gets called synchronously if the corresponding event occured. Some events can be called multiple times!
-    this.registerEventListener('INSTALL_STARTED', (event) => {
+    this.registerEventListener('AFTER_INSTALL', (event) => {
       // Some example logic that does not really do anything:
       if (!event.gahFile?.isHost) {
         return;
@@ -60,11 +60,30 @@ export class TemplatePlugin extends GahPlugin {
       this.loggerService.log(`${this.cfg.someSetting} --> ${event.gahFile?.modules[0].moduleName!}`);
     });
 
-    this.registerEventListener('FINISHED_MODULE_INSTALL', (event) => {
+    this.registerEventListener('BEFORE_ADJUST_ANGULAR_JSON', (event) => {
       // Some example logic that does not really do anything:
       if (!event.module?.isEntry) {
         return;
       }
+
+      // modify angular json here, gah will automatically save it.
+
+      event.ngJson.something = '';
+
+      this.loggerService.log(`entry module: ${event.module.moduleName!}`);
+    });
+
+
+    this.registerEventListener('AFTER_ADJUST_GITIGNORE', async (event) => {
+      // Event handlers can be asynchronous!
+      if (!event.module?.isEntry) {
+        return;
+      }
+
+      // modify angular json here, gah will automatically save it.
+
+      await this.fileSystemService.saveFile('myPath', 'myContent');
+
       this.loggerService.log(`entry module: ${event.module.moduleName!}`);
     });
 
